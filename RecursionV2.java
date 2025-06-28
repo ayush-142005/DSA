@@ -93,35 +93,47 @@
 
 //Q6 count zero
 
+//public class RecursionV2 {
+//    static int zero = 0;
+//    public static void main(String[] args) {
+//        countzero(3020400);
+//        System.out.println(zero);
+//        System.out.println(countz(10000));
+//    }
+//    //m1
+//    static void countzero(int n){
+//        if (n==0){
+//            return ;
+//        }
+//        int rem=n%10;
+//        if(rem==0){
+//            zero++;
+//        }
+//        countzero(n/10);
+//    }
+//    static int countz(int n){
+//        return helper(n,0);
+//    }
+//    static int helper(int n , int c){
+//        if (n==0){
+//            return c;
+//        }
+//        int rem = n%10;
+//        if (rem == 0){
+//            return helper(n/10,c+1);
+//        }
+//        return helper(n/10,c);
+//    }
+//}
+
 public class RecursionV2 {
-    static int zero = 0;
     public static void main(String[] args) {
-        countzero(3020400);
-        System.out.println(zero);
-        System.out.println(countz(10000));
+        System.out.println(fibo(5));
     }
-    //m1
-    static void countzero(int n){
-        if (n==0){
-            return ;
+    static int fibo (int n){
+        if (n<=1){
+            return 1;
         }
-        int rem=n%10;
-        if(rem==0){
-            zero++;
-        }
-        countzero(n/10);
-    }
-    static int countz(int n){
-        return helper(n,0);
-    }
-    static int helper(int n , int c){
-        if (n==0){
-            return c;
-        }
-        int rem = n%10;
-        if (rem == 0){
-            return helper(n/10,c+1);
-        }
-        return helper(n/10,c);
+        return fibo(n-1)+fibo(n-2);
     }
 }
